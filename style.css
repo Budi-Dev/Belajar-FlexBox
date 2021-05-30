@@ -19,6 +19,18 @@ body {
     box-sizing: border-box;
 }
 
+/* Test plugin ScrollMe */
+/* .scrollme {
+	width: 200px;
+	height: 200px;
+	background-color: #9524ff;
+	display: flex;
+	margin: auto;
+} */
+
+
+
+
 /* Latihan 2 */
 .container-dua {
     width: 90%;
@@ -59,6 +71,7 @@ body {
 .container-empat {
     width: 90%;
     margin: 50px auto;
+	min-height: 250px;
 }
     .card {
         border: 2px #c2c2c2 solid;
@@ -91,7 +104,7 @@ body {
     box-sizing: border-box;
 }
     .kotak {
-        width: 20%;
+        min-width: 20%;
         min-height: 50px;
         background-color: dodgerblue;
         padding: 15px;
@@ -136,8 +149,13 @@ body {
     .container-empat {
         display: flex;
     }
+	.card {
+		width: 65%;
+	}
     .card.besar {
-        transform: scale(1.15);
+        transform: scale(3.25);
+		min-height: 380px;
         margin: 0 10px;
+		font-size: larger;
     }
 }      
