@@ -1,161 +1,100 @@
-html, body {
+* {
     padding: 0;
     margin: 0;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ddd;
-    line-height: 1.65;
-    min-height: 1000px;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+nav {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+nav .logo {
+    color: #dec3f7;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
+}
+nav ul {
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 40%;
+    transition: 1s;
+    /* background-color: aquamarine; */
+}
+nav ul li a {
+    text-decoration: none;
+    font-size: .8em;
+    color: rgb(201, 151, 248);
+}
+nav ul li a:hover {
+    color: rgb(234, 211, 255);
 }
 
-
-/* Latihan 1 */
-.container-satu {
-    width: 90%;
-    margin: 50px auto;
-    background-color: white;
-    padding: 20px;
-    box-sizing: border-box;
+/* Hamburger Menu Animation */
+nav .menu-toggle {
+    height: 20px;
+    width: auto;
+    display: none;
+    flex-direction: column;
+    /* background-color: black; */
+    justify-content: space-between;
+    /* background-color: black; */
+    cursor: pointer;
+} 
+nav .menu-toggle span {
+    width: 28px;
+    display: block;
+    height: 3px;
+    background-color: #dec3f7;
+    transition: all .5s;
 }
-
-/* Test plugin ScrollMe */
-/* .scrollme {
-	width: 200px;
-	height: 200px;
-	background-color: #9524ff;
-	display: flex;
-	margin: auto;
+/* nav .menu-toggle span:first-child {
+    transform: rotate(45deg) translate(-1px, -1px);
+    transform-origin: left center;
+} */
+/* nav .menu-toggle span:nth-child(2) {
+    transform: scale(0);
+    opacity: 0;
+}
+nav .menu-toggle span:last-child {
+    transform: rotate(-45deg) translate(-1px, 0);
+    transform-origin: left center;
 } */
 
+/* Responsive Breakpoint */
 
-
-
-/* Latihan 2 */
-.container-dua {
-    width: 90%;
-    margin: 50px auto;
-}
-    .layanan {
-        padding: 15px;
-        box-sizing: border-box;
-        margin-bottom: 20px;
-    }
-    .layanan.satu {
-        background-color: dodgerblue;
-    }
-    .layanan.dua {
-        background-color: lightgreen;
-    }
-    .layanan.tiga {
-        background-color: #9524ff;
-    } 
- 
-/* Latihan 3 */
-.container-tiga {
-    width: 90%;
-    margin: 50px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-    .thumbnail {
+/* Tampilan Tablet */
+@media screen and (max-width: 768px) {
+    nav ul {
         width: 50%;
     }
-    .thumbnail img {
-        height: 200px;
-        width: 100%;
-    }
- 
-/* Latihan 4 */
-.container-empat {
-    width: 90%;
-    margin: 50px auto;
-	min-height: 250px;
 }
-    .card {
-        border: 2px #c2c2c2 solid;
-        padding-bottom: 15px;
-        box-sizing: border-box;
-        background-color: #eee;
-        width: 85%;
-        margin: auto;
-    }
-    .card.besar {
-        width: 100%;
-    }
-    .card header {
-        height: 150px;
-        background-color: #666;
-    }
-    .card .content {
-        text-align: center;
-        padding: 0 15px;
-    }
-
-/* Latihan 5 */
-.container-lima {
-    width: 90%;
-    min-height: 500px;
-    margin: 50px auto;
-    border: 5px rgb(156, 156, 156) solid;
-    display: flex;
-    padding: 15px;
-    box-sizing: border-box;
-}
-    .kotak {
-        min-width: 20%;
-        min-height: 50px;
-        background-color: dodgerblue;
-        padding: 15px;
-        box-sizing: border-box;
-        margin: auto;
+/* Tampilan Mobile */
+@media screen and (max-width: 576px) {
+    nav .menu-toggle {
         display: flex;
-    }
-        .kotak span {
-            margin: auto;
-            text-align: center;
-        }
- 
-/* Responsive */
-@media(min-width: 540px) {
-    .container-satu {
-        display: flex;
-        justify-content: space-between;
-    }
-    .kolom-utama {
-        flex: 3;
-        order: 2;
-        margin: 0 20px 0   10px;
-    }
-    .sidebar-satu {
-        flex: 1;
-        order: 1;
-    }
-    .sidebar-dua {
-        flex: 1;
-        order: 3;
-    }
-    .container-dua {
-        display: flex;
-        justify-content: space-between;
-    }
-    .layanan {
-        width: 30%;
     } 
-    .thumbnail {
-        width: 25%;
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0; 
+        width: 80%;
+        background-color: blueviolet;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        z-index: -1;
+        opacity: 0;
+        transition: all 1s;
+        transform: translateX(100%);
     }
-    .container-empat {
-        display: flex;
+    nav .slide {
+        opacity: 1;
+        transform: translateX(0);
     }
-	.card {
-		width: 65%;
-	}
-    .card.besar {
-        transform: scale(3.25);
-		min-height: 380px;
-        margin: 0 10px;
-		font-size: larger;
-    }
-}      
+}
